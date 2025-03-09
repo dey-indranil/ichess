@@ -31,6 +31,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/game/[gameId].js"
+    ],
+    "/p2p": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/p2p.js"
     ]
   },
   "ampFirstPages": []

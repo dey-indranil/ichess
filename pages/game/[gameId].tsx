@@ -5,14 +5,20 @@ import { useEffect, useState } from 'react';
 
 export default function GamePage() {
   const router = useRouter();
-  const { gameId } = router.query;
+  const { gameId, cpu } = router.query;
+
+  // role = 'white' or 'black' or 'spectator'.
   const [role, setRole] = useState<'white' | 'black' | 'spectator'>('spectator');
 
   useEffect(() => {
-    // Logic to determine user role (white, black, or spectator)
-    // e.g., from query param, user login, or server check
-    // For now, leave it as 'spectator'
-  }, []);
+    if (cpu === 'true') {
+      // If user specifically created a CPU match, let’s make them White by default.
+      setRole('white');
+    } else {
+      // For PVP, we might set the user as white or black from server logic, or default to White
+      setRole('white');
+    }
+  }, [cpu]);
 
   if (!gameId) {
     return <div>Loading game...</div>;
@@ -24,7 +30,11 @@ export default function GamePage() {
       {role === 'spectator' ? (
         <SpectatorView gameId={gameId as string} />
       ) : (
-        <ChessBoardContainer gameId={gameId as string} role={role} />
+        <ChessBoardContainer
+          gameId={gameId as string}
+          role={role}
+          isCPU={cpu === 'true'}
+        />
       )}
     </div>
   );

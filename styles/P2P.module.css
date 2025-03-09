@@ -1,0 +1,52 @@
+/* Example: styles/P2P.module.css */
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;   /* stack header + board vertically */
+    justify-content: center; /* center vertically */
+    align-items: center;     /* center horizontally */
+    min-height: 100vh;       /* fill screen height */
+    
+    /* Subtle gradient background (adjust to taste) */
+    background: linear-gradient(to bottom, #ece9e6, #ffffff);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    /* a subtle text-shadow or color can help it stand out */
+    color: #333;
+  }
+  
+  .boardContainer {
+    margin: 2rem 0;  /* spacing above/below the board */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center the board horizontally */
+  }
+  
+  /* Basic button styling upgrade (optional) */
+  button {
+    background: #0070f3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  .status {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #555;
+  }
+  
